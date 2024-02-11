@@ -36,7 +36,7 @@ int				main(int argc, char **argv);
 void			move_nodes(t_stack_node **stk_a, t_stack_node **stk_b);
 void			push(t_stack_node **dest, t_stack_node **src);
 void			pa(t_stack_node **a, t_stack_node **b, bool c);
-void			pb(t_stack_node **a, t_stack_node **b, bool c);
+void			pb(t_stack_node **b, t_stack_node **a, bool c);
 void			push_swap(t_stack_node **stk_a, t_stack_node **stk_b);
 void			ra(t_stack_node **stk_a, bool c);
 void			rb(t_stack_node **stk_b, bool c);

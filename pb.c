@@ -6,13 +6,13 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 04:19:51 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 19:26:30 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack_node **b, t_stack_node **a, bool c)
+void	pb(t_stack_node **b, t_stack_node **a, bool c)
 {
 	push(b, a);
 	if (!c)
