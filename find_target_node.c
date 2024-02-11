@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_five.c                                      :+:      :+:    :+:   */
+/*   find_target_node.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 04:11:37 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/11 15:01:34 by sprodatu         ###   ########.fr       */
+/*   Created: 2024/02/11 09:24:08 by sprodatu          #+#    #+#             */
+/*   Updated: 2024/02/11 15:16:22 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	handle_five(t_stack_node **stk_a, t_stack_node **stk_b)
+t_stack_node	*find_target_node(t_stack_node *stk_a, t_stack_node *stk_b)
 {
-	while (stack_length(*stk_a) > 3)
-	{
-		init_nodes(*stk_a, *stk_b);
-		finish_rotation(stk_a, find_smallest_node(*stk_a), 'a');
-		pb(stk_b, stk_a, false);
-	}
-}
+	t_stack_node	*cur_a;
+	t_stack_node	*target;
+	long			best_match_index;
 
-// void	handle_five(t_stack_node **a, t_stack_node **b)
-// {
-// 	while (stack_length(*a) > 3)
-// 	{
-// 		if (find_smallest_node(*a)->cur_pos < 3)
-// 			pb(b, a, false);
-// 		else
-// 			ra(a, false);
-// 	}
-// }
+	cur_a = stk_a;
+	target = NULL;
+	best_match_index = LONG_MAX;
+	while (cur_a)
+	{
+		if (cur_a->val > stk_b->val && cur_a->val < best_match_index)
+		{
+			best_match_index = cur_a->val;
+			target = cur_a;
+		}
+		cur_a = cur_a->next;
+	}
+	return (target);
+}

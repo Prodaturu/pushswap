@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 19:01:17 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 19:13:43 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 15:14:18 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(t_stack_node **stk_a, bool c)
 {
-	swap(stk_a);
+	ft_swap(stk_a);
 	if (!c)
 		ft_putstr_fd("sa\n", 1);
 	return ;

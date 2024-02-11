@@ -6,11 +6,24 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 17:55:08 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/08 10:43:47 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 06:48:12 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/**
+ * This function performs the push_swap algorithm to sort the stack.
+ * It takes two stack pointers as arguments: stk_a and stk_b.
+ * 
+ * The algorithm works as follows:
+ * 1. If length of stk_a is 5, use the handle_five fn to sort stack.
+ * 2. else, move elements from stk_a to stk_b until 3 elements left in stk_a.
+ * 3. Sort the remaining 3 elements in stk_a using the mini_sort function.
+ * 4. Move elements from stk_b back to stk_a in the correct order.
+ * 5. Find the smallest element in stk_a and move it to the top of the stack.
+ * now the stack is sorted.
+ */
 
 void	push_swap(t_stack_node **stk_a, t_stack_node **stk_b)
 {
@@ -19,7 +32,7 @@ void	push_swap(t_stack_node **stk_a, t_stack_node **stk_b)
 
 	len_stk_a = stack_length(*stk_a);
 	if (len_stk_a == 5)
-		five_handler(stk_a, stk_b);
+		handle_five(stk_a, stk_b);
 	else
 	{
 		while (len_stk_a-- > 3)
@@ -31,7 +44,7 @@ void	push_swap(t_stack_node **stk_a, t_stack_node **stk_b)
 		init_nodes(*stk_a, *stk_b);
 		move_nodes(stk_a, stk_b);
 	}
-	set_current_pos(*stk_a);
+	set_cur_pos(*stk_a);
 	small = find_smallest_node(*stk_a);
 	if (small->above_mid)
 		while (*stk_a != small)

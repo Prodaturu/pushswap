@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:02:21 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/11 00:12:05 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 07:23:18 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ void	stack_init(t_stack_node **a, char **argv, bool flag_argc_2)
 		if (syntax_error(argv[i]))
 			free_error(a, argv, flag_argc_2);
 		num = ft_atoi(argv[i]);
-		if (num > INT_MAX || num < INT_MIN || repeat_error(*a, num))
+		if (num > INT_MAX || num < INT_MIN || repeat_err(*a, num))
 			free_error(a, argv, flag_argc_2);
-		if (repeat_err(*a, argv, flag_argc_2))
+		if (repeat_err(*a, num))
 			free_error(a, argv, flag_argc_2);
 		append_node(a, num);
 		++i;

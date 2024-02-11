@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 22:22:19 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 11:31:58 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 07:16:08 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	set_price(t_stack_node *stk_a, t_stack_node *stk_b)
 	int	len_a;
 	int	len_b;
 
-	len_a = stack_len(stk_a);
-	len_b = stack_len(stk_b);
+	len_a = stack_length(stk_a);
+	len_b = stack_length(stk_b);
 	while (stk_b)
 	{
 		stk_b->push_price = stk_b->cur_pos;

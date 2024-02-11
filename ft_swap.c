@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_five.c                                      :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 04:11:37 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/11 15:01:34 by sprodatu         ###   ########.fr       */
+/*   Created: 2024/02/05 20:45:01 by sprodatu          #+#    #+#             */
+/*   Updated: 2024/02/11 15:14:09 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	handle_five(t_stack_node **stk_a, t_stack_node **stk_b)
+void	ft_swap(t_stack_node **stk)
 {
-	while (stack_length(*stk_a) > 3)
-	{
-		init_nodes(*stk_a, *stk_b);
-		finish_rotation(stk_a, find_smallest_node(*stk_a), 'a');
-		pb(stk_b, stk_a, false);
-	}
+	t_stack_node	*temp;
+	int				length;
+
+	length = stack_length(*stk);
+	if (!stk || !*stk || length <= 1)
+		return ;
+	temp = *stk;
+	*stk = temp->next;
+	temp->next = (*stk)->next;
+	(*stk)->next = temp;
+	return ;
 }
 
-// void	handle_five(t_stack_node **a, t_stack_node **b)
-// {
-// 	while (stack_length(*a) > 3)
-// 	{
-// 		if (find_smallest_node(*a)->cur_pos < 3)
-// 			pb(b, a, false);
-// 		else
-// 			ra(a, false);
-// 	}
-// }
+// We are going to swap the first two elements of the stack
+// If the stack is empty or has only one element, we do nothing
+// We swap the first two elements of the stack

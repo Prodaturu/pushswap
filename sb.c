@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_five.c                                      :+:      :+:    :+:   */
+/*   sb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 04:11:37 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/11 15:01:34 by sprodatu         ###   ########.fr       */
+/*   Created: 2024/02/11 07:52:23 by sprodatu          #+#    #+#             */
+/*   Updated: 2024/02/11 15:14:25 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	handle_five(t_stack_node **stk_a, t_stack_node **stk_b)
+void	sb(t_stack_node **stk_b, bool c)
 {
-	while (stack_length(*stk_a) > 3)
-	{
-		init_nodes(*stk_a, *stk_b);
-		finish_rotation(stk_a, find_smallest_node(*stk_a), 'a');
-		pb(stk_b, stk_a, false);
-	}
+	ft_swap(stk_b);
+	if (!c)
+		ft_putstr_fd("sa\n", 1);
+	return ;
 }
-
-// void	handle_five(t_stack_node **a, t_stack_node **b)
-// {
-// 	while (stack_length(*a) > 3)
-// 	{
-// 		if (find_smallest_node(*a)->cur_pos < 3)
-// 			pb(b, a, false);
-// 		else
-// 			ra(a, false);
-// 	}
-// }

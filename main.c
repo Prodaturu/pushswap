@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:17:23 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/11 00:04:23 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 09:27:12 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int argc, char **argv)
 			push_swap(&stk_a, &stk_b);
 	}
 	free_stack(&stk_a);
+	return (0);
 }
 
 // Declare two stack nodes, stk_a and stk_b, to hold the data to be sorted.

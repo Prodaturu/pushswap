@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 14:08:36 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 05:10:18 by sprodatu         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -55,6 +43,7 @@ void			rb(t_stack_node **stk_b, bool c);
 int				repeat_err(t_stack_node *stk_a, int number);
 void			rev_rotate_both(t_stack_node **stk_a, t_stack_node **stk_b,
 					t_stack_node *cheapest_node);
+void			rev_rotate(t_stack_node **stk);
 void			rotate_both(t_stack_node **stk_a, t_stack_node **stk_b,
 					t_stack_node *cheapest_node);
 void			rotate(t_stack_node **stk);
@@ -76,5 +65,9 @@ void			sa(t_stack_node **stk_a, bool c);
 void			mini_sort(t_stack_node **stk_a);
 t_stack_node	*find_highest_node(t_stack_node *stk);
 t_stack_node	*cheapest(t_stack_node *stack);
+void			handle_five(t_stack_node **stk_a, t_stack_node **stk_b);
+void			sa(t_stack_node **stk_a, bool c);
+void			sb(t_stack_node **stk_b, bool c);
+void			ft_swap(t_stack_node **stk);
 
 #endif
