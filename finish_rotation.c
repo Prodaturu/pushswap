@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_err.c                                       :+:      :+:    :+:   */
+/*   finish_rotation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 04:16:13 by sprodatu          #+#    #+#             */
+/*   Created: 2024/02/04 04:11:43 by sprodatu          #+#    #+#             */
 /*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	repeat_err(t_stack_node *stk_a, int number)
+void	finish_rotation(t_stack_node **stk, t_stack_node *top,
+	char sname)
 {
-	if (stk_a == NULL)
-		return (0);
-	while (stk_a)
+	while (*stk != top)
 	{
-		if (stk_a->val == number)
-			return (1);
-		stk_a = stk_a->next;
+		if (sname == 'a')
+		{
+			if (top->above_mid)
+				ra(stk, false);
+			else
+				rra(stk, false);
+		}
+		else
+		{
+			if (top->above_mid)
+				rb(stk, false);
+			else
+				rrb(stk, false);
+		}
 	}
-	return (0);
 }

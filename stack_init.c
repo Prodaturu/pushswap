@@ -6,12 +6,14 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:02:21 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/01/28 10:34:41 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 00:12:05 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
+// Check for white space characters.
+// so that we can skip them in input string.
 int	ft_iswhite(char c)
 {
 	if ((c == ' ') || (c == '\t') || (c == '\n')
@@ -20,6 +22,11 @@ int	ft_iswhite(char c)
 	return (0);
 }
 
+// Convert a string to an integer.
+// - Skip white space characters.
+// - Check for a sign character.
+// - Convert the string to an integer.
+// - Return the integer.
 int	ft_atoi(const char *str)
 {
 	int	result;
@@ -44,6 +51,15 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+
+// Initialize the stack with the input data. This is the main function in this file.
+	// Loop over the input data.
+		// syntax error in input -> free memory & exit program
+		// Convert the current input string to an integer.
+		// If integer is out of range or is duplicate, free memory & exit program
+		// If there is a repeat error, free the memory and exit the program.
+		// Add the integer to the stack.
+    // If the input data was provided as a single string, free the memory allocated for the split strings.
 
 void	stack_init(t_stack_node **a, char **argv, bool flag_argc_2)
 {

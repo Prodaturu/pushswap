@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 01:26:31 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/01/23 02:15:46 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
 // Checks whether there is any error in str syntax
 int	syntax_error(char *str_num)

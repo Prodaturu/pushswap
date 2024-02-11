@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 08:49:37 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/01/29 08:51:39 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
 void	rrb(t_stack_node **stk_b, bool c)
 {

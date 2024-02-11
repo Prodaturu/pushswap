@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_err.c                                       :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 04:16:13 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
+/*   Created: 2024/02/05 20:45:01 by sprodatu          #+#    #+#             */
+/*   Updated: 2024/02/08 12:28:53 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	repeat_err(t_stack_node *stk_a, int number)
+void	swap(t_stack_node **stk)
 {
-	if (stk_a == NULL)
-		return (0);
-	while (stk_a)
-	{
-		if (stk_a->val == number)
-			return (1);
-		stk_a = stk_a->next;
-	}
-	return (0);
+	t_stack_node	*temp;
+	int				length;
+
+	length = stack_len(*stk);
+	if (!stk || !*stk || length <= 1)
+		return ;
+	temp = *stk;
+	*stk = temp->next;
+	temp->next = (*stk)->next;
+	(*stk)->next = temp;
+	return ;
 }
+
+// We are going to swap the first two elements of the stack
+// If the stack is empty or has only one element, we do nothing
+// We swap the first two elements of the stack

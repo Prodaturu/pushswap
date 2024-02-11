@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 20:44:28 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/01/26 12:12:52 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
 void	free_matrix(char **argv)
 {

@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 04:20:22 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/01/26 08:37:43 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 04:08:32 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
 /**
  * This function pushes the top node from the source stack (src)
@@ -40,7 +40,7 @@
 // 				set dest prev to node_in
 //				now change start of dest to node_in
 
-static void	push(t_stack_node **dest, t_stack_node **src)
+void	push(t_stack_node **dest, t_stack_node **src)
 {
 	t_stack_node		*node_in;
 

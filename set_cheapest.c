@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_err.c                                       :+:      :+:    :+:   */
+/*   set_cheapest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 04:16:13 by sprodatu          #+#    #+#             */
+/*   Created: 2024/02/04 22:28:26 by sprodatu          #+#    #+#             */
 /*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	repeat_err(t_stack_node *stk_a, int number)
+void	set_cheapest(t_stack_node *stk_b)
 {
-	if (stk_a == NULL)
-		return (0);
-	while (stk_a)
+	long			best_match_val;
+	t_stack_node	*best_match_node;
+
+	if (stk_b == NULL)
+		return ;
+	best_match_val = LONG_MAX;
+	while (stk_b)
 	{
-		if (stk_a->val == number)
-			return (1);
-		stk_a = stk_a->next;
+		if (stk_b->push_price < best_match_val)
+		{
+			best_match_val = stk_b->push_price;
+			best_match_node = stk_b;
+		}
+		stk_b = stk_b->next;
 	}
-	return (0);
+	best_match_node->cheapest = true;
 }

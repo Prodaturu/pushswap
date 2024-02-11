@@ -6,13 +6,13 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:17:23 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/01/28 10:02:08 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/11 00:04:23 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "push_swap.h"
 
-int	main(int argc, int **argv)
+int	main(int argc, char **argv)
 {
 	t_stack_node	*stk_a;
 	t_stack_node	*stk_b;
@@ -24,14 +24,25 @@ int	main(int argc, int **argv)
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	stack_init(&stk_a, argv + 1, argc == 2);
-	if (!sorted_stack(a))
+	if (!sorted_stack(stk_a))
 	{
-		if (stack_length(a) == 2)
+		if (stack_length(stk_a) == 2)
 			sa(&stk_a, false);
-		else if (stack_length == 3)
+		else if (stack_length(stk_a) == 3)
 			mini_sort(&stk_a);
 		else
-			pushswap(&stk_a, &stk_b);
+			push_swap(&stk_a, &stk_b);
 	}
 	free_stack(&stk_a);
 }
+
+// Declare two stack nodes, stk_a and stk_b, to hold the data to be sorted.
+// Initialize the stack nodes to NULL to ensure stacks are empty at the start.
+// Check if the program has input data. If not, return an error.
+// If input data is a single string, split it into separate strings.
+// Initialize the stack with the command line arguments.
+// If the stack is not sorted...
+	// For two elements, perform a swap operation to sort.
+	// For three elements, perform a mini sort operation.
+	// For more than three elements, perform a push_swap operation.
+// Free the memory allocated for the stack to prevent memory leaks.

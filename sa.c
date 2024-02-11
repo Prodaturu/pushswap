@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_err.c                                       :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 04:16:13 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
+/*   Created: 2024/02/05 19:01:17 by sprodatu          #+#    #+#             */
+/*   Updated: 2024/02/05 19:13:43 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	repeat_err(t_stack_node *stk_a, int number)
+void	sa(t_stack_node **stk_a, bool c)
 {
-	if (stk_a == NULL)
-		return (0);
-	while (stk_a)
-	{
-		if (stk_a->val == number)
-			return (1);
-		stk_a = stk_a->next;
-	}
-	return (0);
+	swap(stk_a);
+	if (!c)
+		ft_putstr_fd("sa\n", 1);
+	return ;
 }

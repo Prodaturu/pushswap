@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_err.c                                       :+:      :+:    :+:   */
+/*   rotate_both.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 04:16:13 by sprodatu          #+#    #+#             */
+/*   Created: 2024/02/04 04:04:01 by sprodatu          #+#    #+#             */
 /*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	repeat_err(t_stack_node *stk_a, int number)
+void	rotate_both(t_stack_node **stk_a, t_stack_node **stk_b,
+	t_stack_node *cheapest_node)
 {
-	if (stk_a == NULL)
-		return (0);
-	while (stk_a)
-	{
-		if (stk_a->val == number)
-			return (1);
-		stk_a = stk_a->next;
-	}
-	return (0);
+	while (*stk_b != cheapest_node && *stk_a != cheapest_node->target_node)
+		rr(stk_a, stk_b, false);
+	set_cur_pos(*stk_a);
+	set_cur_pos(*stk_b);
 }

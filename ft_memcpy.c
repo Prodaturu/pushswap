@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_err.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 04:16:13 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
+/*   Created: 2023/10/10 00:54:51 by sprodatu          #+#    #+#             */
+/*   Updated: 2024/02/05 18:52:04 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	repeat_err(t_stack_node *stk_a, int number)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (stk_a == NULL)
+	size_t					index;
+	unsigned char			*ptr;
+
+	index = 0;
+	ptr = (unsigned char *)dst;
+	if (!dst && !src)
 		return (0);
-	while (stk_a)
+	while (index < n)
 	{
-		if (stk_a->val == number)
-			return (1);
-		stk_a = stk_a->next;
+		*(ptr + index) = *((const unsigned char *) src + index);
+		index++;
 	}
-	return (0);
+	return (dst);
 }

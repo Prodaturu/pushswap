@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_err.c                                       :+:      :+:    :+:   */
+/*   handle_five.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 04:16:13 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
+/*   Created: 2024/02/11 04:11:37 by sprodatu          #+#    #+#             */
+/*   Updated: 2024/02/11 04:21:09 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	repeat_err(t_stack_node *stk_a, int number)
+
+void	handle_five(t_stack_node **stk_a, t_stack_node **stk_b)
 {
-	if (stk_a == NULL)
-		return (0);
-	while (stk_a)
+	while (stack_len(*stk_a) > 3)
 	{
-		if (stk_a->val == number)
-			return (1);
-		stk_a = stk_a->next;
+		init_nodes(*stk_a, *stk_b);
+		finish_rotation(stk_a, find_smallest(*stk_a), 'a');
+		pb(stk_b, stk_a, false);
 	}
-	return (0);
 }
+
+// void	handle_five(t_stack_node **a, t_stack_node **b)
+// {
+// 	while (stack_length(*a) > 3)
+// 	{
+// 		if (find_smallest_node(*a)->cur_pos < 3)
+// 			pb(b, a, false);
+// 		else
+// 			ra(a, false);
+// 	}
+// }

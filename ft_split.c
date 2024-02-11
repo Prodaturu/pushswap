@@ -6,11 +6,11 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 13:49:55 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/01/22 20:00:52 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:50:52 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 // funciton to count total no of strings
 

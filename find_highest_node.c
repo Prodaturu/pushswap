@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_err.c                                       :+:      :+:    :+:   */
+/*   find_highest_node.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 04:16:13 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
+/*   Created: 2024/02/08 10:44:32 by sprodatu          #+#    #+#             */
+/*   Updated: 2024/02/08 10:52:14 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	repeat_err(t_stack_node *stk_a, int number)
+t_stack_node	*find_highest_node(t_stack_node *stk)
 {
-	if (stk_a == NULL)
-		return (0);
-	while (stk_a)
+	int				highest;
+	t_stack_node	*highest_node;
+
+	if (!stk || stk == NULL)
+		return (NULL);
+	highest = stk->val;
+	highest_node = stk;
+	while (stk)
 	{
-		if (stk_a->val == number)
-			return (1);
-		stk_a = stk_a->next;
+		if (stk->val > highest)
+		{
+			highest = stk->val;
+			highest_node = stk;
+		}
+		stk = stk->next;
 	}
-	return (0);
+	return (highest_node);
 }
