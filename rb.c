@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:03:50 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/05 05:28:43 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:51:53 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	rb(t_stack_node **stk_b, bool c)
 {
 	rotate(stk_b);
 	if (!c)
-		ft_putstr_fd("rb/n", 1);
+		ft_putstr_fd("rb\n", 1);
 }

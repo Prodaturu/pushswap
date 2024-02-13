@@ -14,8 +14,8 @@
 
 bool	sorted_stack(t_stack_node *stk)
 {
-	if (NULL == stk)
-		return (1);
+	if (stk == NULL)
+		return (true);
 	while (stk->next)
 	{
 		if (stk->val > stk->next->val)

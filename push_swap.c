@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 17:55:08 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/02/11 06:48:12 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:43:35 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@
  * 3. Sort the remaining 3 elements in stk_a using the mini_sort function.
  * 4. Move elements from stk_b back to stk_a in the correct order.
  * 5. Find the smallest element in stk_a and move it to the top of the stack.
- * now the stack is sorted.
+ * 6. If the smallest element is above the middle of the stack, rotate the stack
+ *   until the smallest element is at the top.
+ * 7. If the smallest element is below the middle of the stack, reverse rotate the
+ *  stack until the smallest element is at the top.
+ *
  */
 
 void	push_swap(t_stack_node **stk_a, t_stack_node **stk_b)
@@ -52,4 +56,13 @@ void	push_swap(t_stack_node **stk_a, t_stack_node **stk_b)
 	else
 		while (*stk_a != small)
 			rra(stk_a, false);
+	// while (*stk_a)
+	// {
+	// 	if (sorted_stack(*stk_a))
+	// 		printf("%d\n", (*stk_a)->val);
+	// 	else
+	// 		return ;
+	// 	// printf("%d\n",(*stk_a)->above_mid);
+	// 	*stk_a = (*stk_a)->next;
+	// }
 }
