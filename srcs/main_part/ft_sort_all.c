@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:18:51 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/03/16 16:05:08 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/03/16 21:26:12 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ void	ft_sort(t_stack_node **stack_a)
 		sa(stack_a, 1);
 	else
 	{
-		printf("stack_a: ");
 		stack_b = ft_sort_b(stack_a);
 		stack_a = ft_sort_a(stack_a, &stack_b);
 		index = find_index(*stack_a, ft_min(*stack_a));

@@ -6,7 +6,7 @@
 /*   By: sprodatu <sprodatu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 08:18:54 by sprodatu          #+#    #+#             */
-/*   Updated: 2024/03/16 20:08:11 by sprodatu         ###   ########.fr       */
+/*   Updated: 2024/03/16 21:25:10 by sprodatu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,18 @@ int	main(int argc, char **argv)
 		ft_error();
 	}
 	temp = stack_a;
-	while (temp)
-	{
-		ft_putnbr_fd(temp->number, 1);
-		ft_putstr_fd(" \n", 1);
-		if (temp->next == NULL)
-			break ;
-		temp = temp->next;
-	}
 	if (!ft_checksorted(stack_a))
 		ft_sort(&stack_a);
 	ft_free(&stack_a);
 	return (0);
 }
+
+// paste the below code to print the stack values at that point
+// while (temp)
+// {
+// 	ft_putnbr_fd(temp->number, 1);
+// 	ft_putstr_fd(" \n", 1);
+// 	if (temp->next == NULL)
+// 		break ;
+// 	temp = temp->next;
+// }
